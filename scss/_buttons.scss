@@ -1,0 +1,46 @@
+.btn {
+    font-size: 1.8rem;
+    text-decoration: none;
+    padding: .3rem 1rem;
+    color: $c-dark;
+    text-align: center;
+
+    &__filter,
+    &__all {
+        display: inline-block;
+        background-color: red;
+        margin: 0;
+        width: 50%;
+    }
+
+    &--main {
+        background-color: $c-main;
+        border: 3px solid $c-main;
+        color: $c-white;
+
+        &:hover {
+            background-color: inherit;
+            color: $c-main;
+        }
+    }
+
+    &--second {
+        background-color: $c-second;
+        border: 3px solid $c-second;
+        color: $c-white;
+
+        &:hover {
+            background-color: inherit;
+            color: $c-second;
+        }
+    }
+
+}
+
+.buttons {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+    flex-flow: row wrap;
+}

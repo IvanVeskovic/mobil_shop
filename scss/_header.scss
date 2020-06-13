@@ -1,0 +1,41 @@
+.header {
+    grid-row: 2 / 3;
+    grid-column: col-start 1 / col-end 8;
+
+    position: relative;
+    height: 60vh;
+}
+
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+
+    &__tracker {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__box {
+        background: $c-main;
+        height: 1.5rem;
+        width: 3rem;
+        display: inline-block;
+        transition: all .2s;
+
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        &:hover {
+            background-color: $c-white;
+        }
+    }
+
+}

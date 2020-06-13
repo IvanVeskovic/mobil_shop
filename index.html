@@ -4,11 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile Shop | All Smart at one place</title>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body class='main-container'>
-    <div class="contaier">
-        all here
+    <!-- Content container for everything -->
+    <div class="container">
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <div class="navigation__brand">
+                Mobi<span class="navigation__brand--main">Land</span>
+                <i class="fas fa-globe-europe"></i>
+            </div>
+
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <a href="#"class="navigation__link">Home<a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#"class="navigation__link">Shop<a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#"class="navigation__link">About</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#"class="navigation__link">Contat</a>
+                </li>
+            </ul>
+
+            <div class="navigation__cart">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </nav>
+
+        <header class="header">
+
+            <h1 class="main-heading">
+                All smartphones at one place!
+            </h1>
+
+
+            <div class="carousel">
+                <div class="carousel__tracker">
+                    <div class="carousel__box carousel__box--1"></div>
+                    <div class="carousel__box carousel__box--2"></div>
+                    <div class="carousel__box carousel__box--3"></div>
+                    <div class="carousel__box carousel__box--4"></div>
+                </div>
+            </div>
+        </header>
+
+        <aside class="section-side">
+            <h3 class="heading-third">
+                Choose Filter:
+            </h3>
+            
+            <div class="filter">
+                <div class="filter__control">
+                    <input type="checkbox" name="samsung" id="samsung">
+                    <label for="samsung" class="filter__descrtiption">Samsung</label>
+                </div>
+    
+                <div class="filter__control">
+                    <input type="checkbox" name="apple" id="apple">
+                    <label for="apple" class="filter__descrtiption">Apple</label>
+                </div>
+    
+                <div class="filter__control">
+                    <input type="checkbox" name="xiaomi" id="xiaomi">
+                    <label for="xiaomi" class="filter__descrtiption">Xiaomi</label>
+                </div>
+    
+                <div class="filter__control">
+                    <input type="checkbox" name="lg" id="lg">
+                    <label for="lg" class="filter__descrtiption">LG</label>
+                </div>
+    
+                <div class="filter__control">
+                    <input type="checkbox" name="huawei" id="huawei">
+                    <label for="huawei" class="filter__descrtiption">Huawei</label>
+                </div>
+    
+                <div class="filter__control">
+                    <input type="checkbox" name="honor" id="honor">
+                    <label for="honor" class="filter__descrtiption">Honor</label>
+                </div>
+    
+                <div class="filter__control">
+                    <input type="checkbox" name="nokia" id="nokia">
+                    <label for="nokia" class="filter__descrtiption">Nokia</label>
+                </div>
+    
+                <div class="filter__control">
+                    <input type="checkbox" name="motorola" id="motorola">
+                    <label for="motorola" class="filter__descrtiption">Motorola</label>
+                </div>
+
+
+                <div class="filter__price">
+                        <input type="number" name="price-min" id="price-min" placeholder="Maximum price">
+
+                        <input type="number" name="price-max" id="price-max" placeholder="Minimum price">
+                </div>
+            </div>
+
+            
+    
+            <div class="buttons">
+                <a href="#" class="btn btn__filter btn--main">Filter</a>
+                <a href="#" class="btn btn__all btn--second">Show All</a>
+            </div>
+        </aside>
+
+        <main class="section-main">
+            Main content with phones
+        </main>
+
+        <div class="section-contact">
+            Contact section
+        </div>
+
+        <footer class="footer">
+            Footer
+        </footer>
+        
     </div>
     
+
+    <!-- Main JS -->
+    <script src="js/scrpt.js"></script>
 </body>
 </html>

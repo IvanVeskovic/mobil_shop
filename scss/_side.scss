@@ -1,0 +1,43 @@
+.section-side {
+    grid-row: 3 / 4;
+    grid-column: col-start 1 / col-end 1;
+
+    padding: 1rem;
+}
+
+.filter {
+
+
+    &__control{
+        display: flex;
+        align-items: center;
+        margin-left: 2rem;
+
+
+        * > {
+            display: inline-block;
+        }
+    }
+
+    &__descrtiption {
+        font-size: 1.6rem;
+        margin-left: 1rem;
+    }
+
+    &__price {
+        margin: 2rem 0;
+        
+        & > * {
+            font-size: 1.4rem;
+            color: $c-dark;
+            padding: 1rem 1rem;
+            margin: .2rem 0;
+            border: none;
+            background-color: rgba($c-main, .2);
+
+            &:focus {
+                outline-color: $c-main;
+            }
+        }
+    }
+}
