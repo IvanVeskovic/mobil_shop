@@ -7,17 +7,55 @@
 
 .filter {
 
+    
 
     &__control{
         display: flex;
         align-items: center;
         margin-left: 2rem;
-
+        position: relative;
 
         * > {
             display: inline-block;
         }
+
+        input[type="checkbox"] {
+            position: relative;
+            z-index: 10;
+            opacity: 0;
+        }
     }
+
+    &__control input[type="checkbox"]:checked + &__style{
+        background-color: $c-main;
+    }
+
+    &__control input[type="checkbox"]:checked + &__style i{
+        display: inline-block;
+    }
+
+    &__style {
+        display: inline-block;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-color: rgba($c-main, .4);
+        position: absolute;
+        top: .4rem;
+        left: -.1rem;
+        z-index: 0;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            font-size: 1.4rem;
+            color: $c-white;
+            display: none;
+        }
+    }
+
+    
 
     &__descrtiption {
         font-size: 1.6rem;
@@ -33,7 +71,7 @@
             padding: 1rem 1rem;
             margin: .2rem 0;
             border: none;
-            background-color: rgba($c-main, .2);
+            background-color: rgba($c-main, .3);
 
             &:focus {
                 outline-color: $c-main;

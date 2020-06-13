@@ -116,9 +116,38 @@ body {
 .filter__control {
   display: flex;
   align-items: center;
-  margin-left: 2rem; }
+  margin-left: 2rem;
+  position: relative; }
   .filter__control * > {
     display: inline-block; }
+  .filter__control input[type="checkbox"] {
+    position: relative;
+    z-index: 10;
+    opacity: 0; }
+
+.filter__control input[type="checkbox"]:checked + .filter__style {
+  background-color: #f2994a; }
+
+.filter__control input[type="checkbox"]:checked + .filter__style i {
+  display: inline-block; }
+
+.filter__style {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: rgba(242, 153, 74, 0.4);
+  position: absolute;
+  top: .4rem;
+  left: -.1rem;
+  z-index: 0;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .filter__style i {
+    font-size: 1.4rem;
+    color: #fff;
+    display: none; }
 
 .filter__descrtiption {
   font-size: 1.6rem;
@@ -132,7 +161,7 @@ body {
     padding: 1rem 1rem;
     margin: .2rem 0;
     border: none;
-    background-color: rgba(242, 153, 74, 0.2); }
+    background-color: rgba(242, 153, 74, 0.3); }
     .filter__price > *:focus {
       outline-color: #f2994a; }
 
