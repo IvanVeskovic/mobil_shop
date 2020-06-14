@@ -1,0 +1,5 @@
+@mixin animateBtn($color) {
+    color: $color;
+    box-shadow: 0 1rem 2rem rgba($c-dark, .3);
+    transform: translateY(-3px);
+}

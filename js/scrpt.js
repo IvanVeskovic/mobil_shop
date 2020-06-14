@@ -1,5 +1,8 @@
 const inputs = document.querySelectorAll('input');
 
+
+
+
 function isTrue(){
     inputs.forEach(el => {
         if(el.checked === true) {
@@ -8,4 +11,7 @@ function isTrue(){
     });
 }
 
-document.querySelector('.btn__filter').addEventListener('click', isTrue);
+// document.querySelector('.btn__filter').addEventListener('click', isTrue);
+
+// Year current
+document.getElementById('year').innerText = new Date().getFullYear();

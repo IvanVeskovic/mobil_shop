@@ -323,11 +323,52 @@
         </main>
 
         <div class="section-contact">
-            
+            <h2 class="heading-second">Contact Us</h2>
+            <form class="form">
+                <div class="form__controll">
+                    <input type="text" name="name" id="name" class="form__input" placeholder="Name" autocomplete="off" required> 
+                    <small>Name</small>
+                </div>
+                <div class="form__controll">
+                    <input type="email" name="email" id="email" class="form__input" placeholder="Email" autocomplete="off" required>
+                    <small>Email</small>
+                </div>
+                <div class="form__controll">
+                    <textarea name="message" id="message" class="form__textarea" placeholder="Message" required></textarea>
+                    <small>Message</small>
+                </div>
+                <input type="submit" value="Send" class="btn btn--form">
+            </form>
         </div>
 
         <footer class="footer">
-            Footer
+            <div class="copyright">
+                &copy; Ivan Veskovic <span id="year"></span>
+            </div>
+
+            <div class="socials">
+                <div class="socials__box">
+                    <a href="facebook.com">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </div>
+                <div class="socials__box">
+                    <a href="instagram.com">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="socials__box">
+                    <a href="linkedin.com">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="socials__box">
+                    <a href="google.com">
+                        <i class="fab fa-google-plus-square"></i>
+                    </a>
+                </div>
+                
+            </div>
         </footer>
         
     </div>

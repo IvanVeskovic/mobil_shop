@@ -1,4 +1,35 @@
 .footer {
     grid-row: 5 / 6;
     grid-column: col-start 1 / col-end 8;
+    background-color: $c-dark;
+    color: $c-main;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.copyright {
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+
+.socials {
+
+    &__box {
+        display: inline-block;
+        font-size: 3rem;
+        margin: 1rem;
+
+        i {
+            color: $c-main;
+            transition: all .3s;
+
+            &:hover {
+                transform: rotate(360deg) scale(1.2);
+                color: $c-white;
+            }
+        }
+    }
 }

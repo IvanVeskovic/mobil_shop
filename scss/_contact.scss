@@ -1,4 +1,89 @@
 .section-contact {
     grid-row: 4 / 5;
     grid-column: col-start 1 / col-end 8;
+
+    // background: linear-gradient(to right, rgba($c-dark, .3), rgba($c-dark, .3));
+    background-color: transparent;
+    border: 3px solid $c-white;
+    // background: linear-gradient(105deg,
+    //                             rgba($c-dark, .3) 0%,
+    //                             rgba($c-dark, .3) 65%,
+    //                             transparent 65%);
+}
+
+.form {
+    width: 50%;
+    margin: 0 auto;
+
+    small { 
+        display: inline-block;
+        // color: black;
+        color: $c-white;
+        font-size: 1.7rem;
+        transform: translateY(0);
+        margin-left: 1rem;
+        // opacity: 1;
+        transition: all .2s;
+        position: relative;
+        z-index: -1;
+    }
+
+    &__controll {
+        margin-bottom: .5rem;
+
+        input:placeholder-shown ~ small {
+            transform: translateY(-3rem);
+            opacity: 1;
+        }
+    }
+
+    &__controll:last-of-type small {
+        transform: translateY(-14rem);
+        opacity: 1;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        font-size: 1.6rem;
+        padding: 1rem;
+        color: inherit;
+        border: none;
+        position: relative;
+        z-index: 10;
+
+        &::placeholder {
+            font-size: 1.4rem;
+            // font-family: 'Mukta', sans-serif;
+            font-family: inherit;
+            text-transform: uppercase;
+        }
+    }
+
+    &__textarea {
+        height: 15rem;
+        padding: 1rem;
+        font-size: 1.6rem;
+        width: 100%;
+        font-family: 'Mukta', sans-serif;
+        color: inherit;
+        border: none;
+
+
+        &:not(:placeholder-shown) + small {
+            transform: translateY(-.4rem);
+        }
+
+        &::placeholder {
+            font-size: 1.6rem;
+            font-family: 'Mukta', sans-serif;
+            text-transform: uppercase;
+        }
+    }
+
+    &__input:focus,
+    &__textarea:focus {
+        outline: none;
+    }
+
 }

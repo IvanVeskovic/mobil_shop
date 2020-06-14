@@ -2,22 +2,24 @@
     grid-row: 3 / 4;
     grid-column: col-start 2 / col-end 8;
 
-    background-color: #fff;
+    background-color: transparent;
+    border: 3px solid #fff;
 }
 
 .mobiles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
-    grid-gap: 3rem;
+    grid-gap: 4rem;
 
     width: 100%;
-    padding: 2.5rem;
+    padding: 5rem 2.5rem;
 }
 
 .mobile {
     
     box-shadow: 0 1rem 1.5rem rgba($c-dark, .3);
     padding: 1rem;
+    background-color: #fff;
 
     &__img {
         width: 100%;
@@ -27,7 +29,7 @@
     &__brand {
         background: linear-gradient(45deg, $c-main, $c-second);
         padding: .5rem 2rem;
-        font-size: 2rem;
+        font-size: 1.8rem;
         text-align: center;
         color: $c-white;
         font-weight: 300;
@@ -41,12 +43,12 @@
     &__box {
         display: flex;
         justify-content: space-between;
+        font-size: 1.4rem;
 
         font-weight: 700;
 
         span {
             font-weight: 400;
-
         }
     }
 
