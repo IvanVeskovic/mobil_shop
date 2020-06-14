@@ -4,14 +4,16 @@
     padding: .3rem 1rem;
     color: $c-dark;
     text-align: center;
+    display: inline-block;
+    margin: 0;
+    width: 50%;
 
-    &__filter,
-    &__all {
-        display: inline-block;
-        background-color: red;
-        margin: 0;
-        width: 50%;
-    }
+    // &__filter,
+    // &__all {
+    //     display: inline-block;
+    //     margin: 0;
+    //     width: 50%;
+    // }
 
     &--main {
         background-color: $c-main;
