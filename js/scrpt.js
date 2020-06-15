@@ -8,42 +8,22 @@ const carouselImages = ['../img/carousel-1.jpg', '../img/carousel-2.jpg' , '../i
 
 
 //Remove width from carousel img
-function removeWidth () {
+function removeOpacity () {
     carousels.forEach(el => {
-        el.style.width = '0';
+        el.style.opacity = '0';
     })
 } 
 
 // Change carousel on click
 carouselTracker.addEventListener('click', function(e) {
     if(e.target.classList.contains('carousel__box')){
-        removeWidth();
+        removeOpacity();
         
         let element = +(e.target.classList[1].slice(-1)) - 1;
-        carousels[element].style.width = "100%";
+        carousels[element].style.opacity = "1";
     }
     e.preventDefault();
 })
-
-
-// function start() {
-
-//     setTimeout(function() {
-//         console.log('Hello My Infinite Loop Execution');
-
-//       // Again
-//       start();
-
-//       // Every 3 sec
-//     }, 3000);
-// }
-
-// // Begins
-// start();
-
-
-autoScrollCarousel();
-
 
 
 
