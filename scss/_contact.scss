@@ -21,7 +21,7 @@
         color: $c-white;
         font-size: 1.7rem;
         transform: translateY(0);
-        margin-left: 1rem;
+        margin-left: .75rem;
         // opacity: 1;
         transition: all .2s;
         position: relative;
@@ -53,7 +53,7 @@
         z-index: 10;
 
         &::placeholder {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             // font-family: 'Mukta', sans-serif;
             font-family: inherit;
             text-transform: uppercase;
@@ -75,7 +75,7 @@
         }
 
         &::placeholder {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-family: 'Mukta', sans-serif;
             text-transform: uppercase;
         }

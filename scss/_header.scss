@@ -4,6 +4,7 @@
 
     position: relative;
     height: 60vh;
+
 }
 
 .carousel {
@@ -12,7 +13,25 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: grey;
+    background: linear-gradient(to right, rgba($c-white, .3), rgba($c-white, .3));
+    transition: all .3s;
+
+    &__img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -100;
+        transition: all .3s;
+
+        &--2,
+        &--3 {
+            width: 0;;
+        }
+    }
 
     &__tracker {
         position: absolute;

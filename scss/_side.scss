@@ -3,15 +3,20 @@
     grid-column: col-start 1 / col-end 1;
 
     padding: 1rem;
+
+    background-color: $c-white;
+
 }
 
 .filter {
+
     
     &__control{
         display: flex;
         align-items: center;
         margin-left: 2rem;
         position: relative;
+        color: $c-main;
 
         * > {
             display: inline-block;
@@ -65,15 +70,23 @@
         
         & > * {
             font-size: 1.4rem;
-            color: $c-dark;
+            color: $c-white;
             padding: 1rem 1rem;
             margin: .2rem 0;
             border: none;
-            background-color: rgba($c-main, .3);
+            background-color: rgba($c-main, .9);
 
             &:focus {
                 outline-color: $c-main;
             }
+        }
+
+        & > *:focus {
+            outline: none;
+        }
+
+        & > *::placeholder {
+            color: $c-white;
         }
     }
 }

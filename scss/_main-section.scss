@@ -20,6 +20,8 @@
     box-shadow: 0 1rem 1.5rem rgba($c-dark, .3);
     padding: 1rem;
     background-color: #fff;
+    transition: all .4s;
+    backface-visibility: hidden;
 
     &__img {
         width: 100%;
@@ -36,6 +38,13 @@
         text-transform: uppercase;
     }
 
+    &__price {
+        border-bottom: 1px solid $c-main;
+        padding: .5rem 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
     &__specs {
         padding: 1rem;
     }
@@ -50,6 +59,11 @@
         span {
             font-weight: 400;
         }
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 1.5rem 2rem rgba($c-dark, .3);
     }
 
 
