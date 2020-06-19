@@ -15,6 +15,67 @@
     <!-- Content container for everything -->
     <div class="container">
 
+        <!-- Side cart -->
+        <div class="cart">
+            <div class="cart__close">
+                <i class="fas fa-times-circle"></i>
+            </div>
+            <h3 class="heading-third heading-third--big">
+                Cart
+            </h2>
+            <div class="cart__controll-heading">
+                <div class="cart__heading">
+                    Model
+                </div>
+                <div class="cart__heading">
+                    Price
+                </div>
+                <div class="cart__heading">
+                    Quantity
+                </div>
+            </div>
+            <div class="cart__box">
+                
+                <!-- <div class="cart__controll">
+                    <div class="cart__model">
+                        Samsung a30
+                    </div>
+                    <div class="cart__price">
+                        430e
+                    </div>
+                    <input type="number" name="price-min" id="price-min" min="1" class="number-input" value="1">
+                    <div class="cart__delete">
+                        <i class="fas fa-window-close"></i>
+                    </div>
+                </div> -->
+                <!-- Cart item row -->
+                <!-- <div class="cart__controll">
+                    <div class="cart__model">
+                        Samsung a30
+                    </div>
+                    <div class="cart__price">
+                        0&euro;
+                    </div>
+                    <input type="number" name="price-min" id="price-min" min="1" class="number-input" value="1">
+                    <div class="cart__delete">
+                        <i class="fas fa-window-close"></i>
+                    </div>
+                </div> -->
+                <!-- End of row -->
+                
+            </div>
+
+            <div class="cart__total">
+                Total: <span class="cart__total__price">0&euro;</span>
+            </div>
+
+                <div class="buttons">
+                    <a href="#" class="btn btn--main btn-discard">Discard</a>
+                    <a href="#" class="btn btn--second btn-order">Order</a>
+                </div>
+        </div>
+
+
         <!-- Navigation -->
         <nav class="navigation">
             <div class="navigation__brand">
@@ -30,13 +91,13 @@
                     <a href="#"class="navigation__link">Home<a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#"class="navigation__link">Shop<a>
+                    <a href="#section-main"class="navigation__link">Shop<a>
                 </li>
                 <li class="navigation__item">
                     <a href="#"class="navigation__link">About</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#"class="navigation__link">Contat</a>
+                    <a href="#section-contact"class="navigation__link">Contat</a>
                 </li>
             </ul>
 
@@ -71,7 +132,7 @@
             
             <div class="filter">
                 <div class="filter__control">
-                    <input type="checkbox" name="samsung" id="samsung">
+                    <input type="checkbox" name="samsung" id="samsung" class="checkbox">
                     <span class="filter__style">
                         <i class="fas fa-check"></i>
                     </span>
@@ -79,7 +140,7 @@
                 </div>
     
                 <div class="filter__control">
-                    <input type="checkbox" name="apple" id="apple">
+                    <input type="checkbox" name="apple" id="apple" class="checkbox">
                     <span class="filter__style">
                         <i class="fas fa-check"></i>
                     </span>
@@ -87,7 +148,7 @@
                 </div>
     
                 <div class="filter__control">
-                    <input type="checkbox" name="xiaomi" id="xiaomi">
+                    <input type="checkbox" name="xiaomi" id="xiaomi" class="checkbox">
                     <span class="filter__style">
                         <i class="fas fa-check"></i>
                     </span>
@@ -95,7 +156,7 @@
                 </div>
     
                 <div class="filter__control">
-                    <input type="checkbox" name="lg" id="lg">
+                    <input type="checkbox" name="lg" id="lg" class="checkbox">
                     <span class="filter__style">
                         <i class="fas fa-check"></i>
                     </span>
@@ -103,15 +164,15 @@
                 </div>
     
                 <div class="filter__control">
-                    <input type="checkbox" name="huawei" id="huawei">
+                    <input type="checkbox" name="huawei" id="huawei" class="checkbox">
                     <span class="filter__style">
                         <i class="fas fa-check"></i>
                     </span>
-                    <label for="huawei" class="filter__descrtiption">Huawei</label>
+                    <label for="huawei" class="filter__descrtiption" class="checkbox">Huawei</label>
                 </div>
     
                 <div class="filter__control">
-                    <input type="checkbox" name="honor" id="honor">
+                    <input type="checkbox" name="honor" id="honor" class="checkbox">
                     <span class="filter__style">
                         <i class="fas fa-check"></i>
                     </span>
@@ -119,7 +180,7 @@
                 </div>
     
                 <div class="filter__control">
-                    <input type="checkbox" name="nokia" id="nokia">
+                    <input type="checkbox" name="nokia" id="nokia" class="checkbox">
                     <span class="filter__style">
                         <i class="fas fa-check"></i>
                     </span>
@@ -127,7 +188,7 @@
                 </div>
     
                 <div class="filter__control">
-                    <input type="checkbox" name="motorola" id="motorola">
+                    <input type="checkbox" name="motorola" id="motorola" class="checkbox">
                     <span class="filter__style">
                         <i class="fas fa-check"></i>
                     </span>
@@ -136,24 +197,27 @@
 
 
                 <div class="filter__price">
-                        <input type="number" name="price-min" id="price-min" placeholder="Maximum price">
+                        <input type="number" name="price-min" id="price-min" placeholder="Minimum price" min="0" class="number-input">
 
-                        <input type="number" name="price-max" id="price-max" placeholder="Minimum price">
+                        <input type="number" name="price-max" id="price-max" placeholder="Maximum price" min="0" class="number-input">
+
+
                 </div>
             </div>
 
             
     
             <div class="buttons">
-                <a href="#" class="btn btn--main">Filter</a>
-                <a href="#" class="btn btn--second">Show All</a>
+                <a href="#" class="btn btn--main" id="filter">Filter</a>
+                <a href="#" class="btn btn--second" id="show-all">Show All</a>
             </div>
         </aside>
 
-        <main class="section-main">
+        <main class="section-main" id="section-main">
             <div class="mobiles">
+                
                 <!-- Mobile start -->
-                <div class="mobile">
+                <!-- <div class="mobile">
                     <img src="img/mobiles/Samsung_Galaxy_S10_Plus_Prism.jpg" alt="Mobile" class="mobile__img">
                     <div class="mobile__brand">Samsung <span class="mobile__model">A30</span></div>
                     <div class="mobile__specs">
@@ -172,152 +236,20 @@
                         <div class="mobile__box">
                             Screen: <span class="mobile__screen">"6.3</span>
                         </div>
-                    </div>
-                    <div class="buttons">
-                        <a href="#" class="btn btn--main">More</a>
-                        <a href="#" class="btn btn--second">Buy</a>
-                    </div>
-                </div>
-                <!-- Mobile End --> 
-                <!-- Mobile start -->
-                <div class="mobile">
-                    <img src="img/mobiles/Samsung_Galaxy_S10_Plus_Prism.jpg" alt="Mobile" class="mobile__img">
-                    <div class="mobile__brand">Samsung <span class="mobile__model">A30</span></div>
-                    <div class="mobile__specs">
-                        <div class="mobile__price">
-                            14500RSD
-                        </div>
                         <div class="mobile__box">
-                            CPU: <span class="mobile__cpu">Cortex a20 2.1GHz</span>
-                        </div>
-                        <div class="mobile__box">
-                            RAM: <span class="mobile__ram">3GB</span>
-                        </div>
-                        <div class="mobile__box">
-                            Internal Space: <span class="mobile__space">64GB</span>
-                        </div>
-                        <div class="mobile__box">
-                            Screen: <span class="mobile__screen">"6.3</span>
+                            Camera: <span class="mobile__camera">24</span>
                         </div>
                     </div>
                     <div class="buttons">
-                        <a href="#" class="btn btn--main">More</a>
-                        <a href="#" class="btn btn--second">Buy</a>
+                        <a href="#" class="btn btn--main btn-more">More</a>
+                        <a href="#" class="btn btn--second btn-buy">Buy</a>
                     </div>
-                </div>
-                <!-- Mobile End --> 
-                <!-- Mobile start -->
-                <div class="mobile">
-                    <img src="img/mobiles/Samsung_Galaxy_S10_Plus_Prism.jpg" alt="Mobile" class="mobile__img">
-                    <div class="mobile__brand">Samsung <span class="mobile__model">A30</span></div>
-                    <div class="mobile__specs">
-                        <div class="mobile__price">
-                            14500RSD
-                        </div>
-                        <div class="mobile__box">
-                            CPU: <span class="mobile__cpu">Cortex a20 2.1GHz</span>
-                        </div>
-                        <div class="mobile__box">
-                            RAM: <span class="mobile__ram">3GB</span>
-                        </div>
-                        <div class="mobile__box">
-                            Internal Space: <span class="mobile__space">64GB</span>
-                        </div>
-                        <div class="mobile__box">
-                            Screen: <span class="mobile__screen">"6.3</span>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <a href="#" class="btn btn--main">More</a>
-                        <a href="#" class="btn btn--second">Buy</a>
-                    </div>
-                </div>
-                <!-- Mobile End --> 
-                <!-- Mobile start -->
-                <div class="mobile">
-                    <img src="img/mobiles/Samsung_Galaxy_S10_Plus_Prism.jpg" alt="Mobile" class="mobile__img">
-                    <div class="mobile__brand">Samsung <span class="mobile__model">A30</span></div>
-                    <div class="mobile__specs">
-                        <div class="mobile__price">
-                            14500RSD
-                        </div>
-                        <div class="mobile__box">
-                            CPU: <span class="mobile__cpu">Cortex a20 2.1GHz</span>
-                        </div>
-                        <div class="mobile__box">
-                            RAM: <span class="mobile__ram">3GB</span>
-                        </div>
-                        <div class="mobile__box">
-                            Internal Space: <span class="mobile__space">64GB</span>
-                        </div>
-                        <div class="mobile__box">
-                            Screen: <span class="mobile__screen">"6.3</span>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <a href="#" class="btn btn--main">More</a>
-                        <a href="#" class="btn btn--second">Buy</a>
-                    </div>
-                </div>
-                <!-- Mobile End --> 
-                <!-- Mobile start -->
-                <div class="mobile">
-                    <img src="img/mobiles/Samsung_Galaxy_S10_Plus_Prism.jpg" alt="Mobile" class="mobile__img">
-                    <div class="mobile__brand">Samsung <span class="mobile__model">A30</span></div>
-                    <div class="mobile__specs">
-                        <div class="mobile__price">
-                            14500RSD
-                        </div>
-                        <div class="mobile__box">
-                            CPU: <span class="mobile__cpu">Cortex a20 2.1GHz</span>
-                        </div>
-                        <div class="mobile__box">
-                            RAM: <span class="mobile__ram">3GB</span>
-                        </div>
-                        <div class="mobile__box">
-                            Internal Space: <span class="mobile__space">64GB</span>
-                        </div>
-                        <div class="mobile__box">
-                            Screen: <span class="mobile__screen">"6.3</span>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <a href="#" class="btn btn--main">More</a>
-                        <a href="#" class="btn btn--second">Buy</a>
-                    </div>
-                </div>
-                <!-- Mobile End --> 
-                <!-- Mobile start -->
-                <div class="mobile">
-                    <img src="img/mobiles/Samsung_Galaxy_S10_Plus_Prism.jpg" alt="Mobile" class="mobile__img">
-                    <div class="mobile__brand">Samsung <span class="mobile__model">A30</span></div>
-                    <div class="mobile__specs">
-                        <div class="mobile__price">
-                            14500RSD
-                        </div>
-                        <div class="mobile__box">
-                            CPU: <span class="mobile__cpu">Cortex a20 2.1GHz</span>
-                        </div>
-                        <div class="mobile__box">
-                            RAM: <span class="mobile__ram">3GB</span>
-                        </div>
-                        <div class="mobile__box">
-                            Internal Space: <span class="mobile__space">64GB</span>
-                        </div>
-                        <div class="mobile__box">
-                            Screen: <span class="mobile__screen">"6.3</span>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <a href="#" class="btn btn--main">More</a>
-                        <a href="#" class="btn btn--second">Buy</a>
-                    </div>
-                </div>
+                </div>  -->
                 <!-- Mobile End --> 
             </div>
         </main>
 
-        <div class="section-contact">
+        <div class="section-contact" id="section-contact">
             <h2 class="heading-second">Contact Us</h2>
             <form class="form">
                 <div class="form__controll">
@@ -343,22 +275,22 @@
 
             <div class="socials">
                 <div class="socials__box">
-                    <a href="facebook.com">
+                    <a target="_blank" href="https://www.facebook.com/">
                         <i class="fab fa-facebook-square"></i>
                     </a>
                 </div>
                 <div class="socials__box">
-                    <a href="instagram.com">
+                    <a target="_blank" href="https://www.instagram.com/?hl=sr">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
                 <div class="socials__box">
-                    <a href="linkedin.com">
+                    <a target="_blank" href="https://www.linkedin.com/">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
                 <div class="socials__box">
-                    <a href="google.com">
+                    <a target="_blank" href="https://www.google.rs/">
                         <i class="fab fa-google-plus-square"></i>
                     </a>
                 </div>

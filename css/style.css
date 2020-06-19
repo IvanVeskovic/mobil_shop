@@ -9,7 +9,8 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  color: #161a19; }
+  color: #161a19;
+  scroll-behavior: smooth; }
 
 body {
   font-family: 'Mukta', sans-serif;
@@ -69,7 +70,8 @@ body {
     font-size: 3rem;
     color: #f2994a;
     opacity: .8;
-    transition: all .2s; }
+    transition: all .2s;
+    cursor: pointer; }
     .navigation__cart:hover {
       opacity: 1; }
 
@@ -95,7 +97,7 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -100;
-    transition: all .4s;
+    transition: all 1s;
     opacity: 1; }
     .carousel__img--2, .carousel__img--3 {
       opacity: 0; }
@@ -164,19 +166,6 @@ body {
 
 .filter__price {
   margin: 2rem 0; }
-  .filter__price > * {
-    font-size: 1.4rem;
-    color: #fff;
-    padding: 1rem 1rem;
-    margin: .2rem 0;
-    border: none;
-    background-color: rgba(242, 153, 74, 0.9); }
-    .filter__price > *:focus {
-      outline-color: #f2994a; }
-  .filter__price > *:focus {
-    outline: none; }
-  .filter__price > *::placeholder {
-    color: #fff; }
 
 .section-main {
   grid-row: 3 / 4;
@@ -186,10 +175,12 @@ body {
 
 .mobiles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   grid-gap: 4rem;
   width: 100%;
-  padding: 5rem 2.5rem; }
+  padding: 5rem 2.5rem;
+  backface-visibility: hidden;
+  transform: perspective(1px); }
 
 .mobile {
   box-shadow: 0 1rem 1.5rem rgba(22, 26, 25, 0.3);
@@ -208,23 +199,31 @@ body {
     color: #fff;
     font-weight: 300;
     text-transform: uppercase; }
+  .mobile__model {
+    display: block; }
   .mobile__price {
     border-bottom: 1px solid #f2994a;
     padding: .5rem 1rem;
     text-align: center;
     margin-bottom: 1rem; }
   .mobile__specs {
-    padding: 1rem; }
+    padding: 1rem;
+    backface-visibility: hidden; }
   .mobile__box {
     display: flex;
     justify-content: space-between;
     font-size: 1.4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-weight: 700; }
     .mobile__box span {
       font-weight: 400; }
   .mobile:hover {
     transform: scale(1.05);
-    box-shadow: 0 1.5rem 2rem rgba(22, 26, 25, 0.3); }
+    box-shadow: 0 1.5rem 2rem rgba(22, 26, 25, 0.3);
+    backface-visibility: hidden; }
   .mobile .btn {
     font-size: 1.6rem; }
 
@@ -347,6 +346,8 @@ body {
     height: .25rem;
     width: 5rem;
     background-color: #f2994a; }
+  .heading-third--big {
+    font-size: 3rem; }
 
 .btn {
   font-size: 1.8rem;
@@ -400,3 +401,85 @@ body {
   display: flex;
   flex-grow: 1;
   flex-flow: row wrap; }
+
+.cart {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  height: 100%;
+  background-color: #161a19;
+  padding: 5rem;
+  color: #fff;
+  width: 50rem;
+  transition: all .2s;
+  transform: translateX(50rem);
+  overflow-y: auto; }
+  .cart__box {
+    padding: 1rem 1rem;
+    margin: .5rem 0;
+    border-bottom: 1px solid #f2994a; }
+  .cart__controll, .cart__controll-heading {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem 0; }
+    .cart__controll > *:not(:last-child), .cart__controll-heading > *:not(:last-child) {
+      display: flex;
+      align-items: center;
+      width: 30%; }
+    .cart__controll:not(:last-child), .cart__controll-heading:not(:last-child) {
+      border-bottom: 1px solid #fff; }
+    .cart__controll input, .cart__controll-heading input {
+      width: 6rem;
+      background-color: #fff;
+      color: #f2994a; }
+  .cart__heading {
+    color: #f2994a;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    width: 30%; }
+  .cart__price {
+    justify-content: center; }
+  .cart__delete {
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .cart__delete i {
+      font-size: 2rem;
+      margin-left: 1rem;
+      color: #fff;
+      cursor: pointer;
+      transition: all .2s; }
+    .cart__delete:hover > i {
+      color: #f2994a; }
+  .cart__total {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: #f2994a; }
+  .cart__close {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    color: #f2994a;
+    font-size: 4rem;
+    cursor: pointer;
+    z-index: 30; }
+
+.number-input {
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 1rem 1rem;
+  margin: .2rem 0;
+  border: none;
+  background-color: rgba(242, 153, 74, 0.9); }
+  .number-input:focus {
+    outline-color: #f2994a; }
+  .number-input:focus {
+    outline: none; }
+  .number-input*::placeholder {
+    color: #fff; }

@@ -69,6 +69,8 @@
         color: $c-main;
         opacity: .8;
         transition: all .2s;
+        cursor: pointer;
+
 
         &:hover {
             opacity: 1;

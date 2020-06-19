@@ -8,11 +8,14 @@
 
 .mobiles {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     grid-gap: 4rem;
 
     width: 100%;
     padding: 5rem 2.5rem;
+    backface-visibility: hidden;
+    transform: perspective(1px);
+
 }
 
 .mobile {
@@ -38,6 +41,10 @@
         text-transform: uppercase;
     }
 
+    &__model {
+        display: block;
+    }
+
     &__price {
         border-bottom: 1px solid $c-main;
         padding: .5rem 1rem;
@@ -47,12 +54,17 @@
 
     &__specs {
         padding: 1rem;
+        backface-visibility: hidden;
     }
 
     &__box {
         display: flex;
         justify-content: space-between;
         font-size: 1.4rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         font-weight: 700;
 
@@ -64,12 +76,8 @@
     &:hover {
         transform: scale(1.05);
         box-shadow: 0 1.5rem 2rem rgba($c-dark, .3);
+        backface-visibility: hidden;
     }
-
-
-
-
-
 
     .btn {
         font-size: 1.6rem;

@@ -1,0 +1,18 @@
+.number-input {
+    font-size: 1.4rem;
+    color: $c-white;
+    padding: 1rem 1rem;
+    margin: .2rem 0;
+    border: none;
+    background-color: rgba($c-main, .9);
+    &:focus {
+        outline-color: $c-main;
+    }
+    &:focus {
+        outline: none;
+    }
+
+    &*::placeholder {
+        color: $c-white;
+    }
+}   
