@@ -11,10 +11,6 @@ const filterMax = document.getElementById('price-max').value;
 const cartBox = document.querySelector('.cart__box');
 const quantityCartElements = document.querySelectorAll('.quantity-mobile');
 
-
-
-
-
 const carouselImages = ['../img/carousel-1.jpg', '../img/carousel-2.jpg' , '../img/carousel-3.jpg'];
 
 // Simualtion database
@@ -236,6 +232,7 @@ const mobileDB = [
     },
 ]
 
+// Create mobile item
 function addMobile(brand, model, price, cpu, ram, space, screen, camera, imgUrl) {
     let mobileContainer = document.querySelector('.mobiles');
 
@@ -273,6 +270,7 @@ function addMobile(brand, model, price, cpu, ram, space, screen, camera, imgUrl)
     mobileContainer.appendChild(mobile);
 }
 
+// Add mobiles from database to UI.
 function importDbMobToUI(){
     mobileDB.forEach(el => {
         [brand, model, price, cpu, ram, space, screen, camera, imgUrl] = Object.values(el);
@@ -280,7 +278,6 @@ function importDbMobToUI(){
         addMobile(brand, model, price, cpu, ram, space, screen, camera, imgUrl);
     })
 }
-
 
 
 //Remove opacity from carousel img
@@ -306,10 +303,12 @@ carouselTracker.addEventListener('click', function(e) {
 document.getElementById('show-all').addEventListener('click', importDbMobToUI);
 
 // Filter mobile and display to UI
-document.getElementById('filter').addEventListener('click', function() {
+document.getElementById('filter').addEventListener('click', function(e) {
     clearAllPhones();
-    const checkedNames = filterDatabase();
+    const checkedNames = filterByCheckbox();
+    const filterMax = +document.getElementById('price-max').value;
 
+    console.log(filterMax);
     // Loop through checked filter
     checkedNames.forEach(elNames => {
         // Loop through database array
@@ -320,11 +319,14 @@ document.getElementById('filter').addEventListener('click', function() {
             } 
         })
     })
+
     e.preventDefault();
 });
 
 
-function filterDatabase(){
+
+// Filter database with checkboxes
+function filterByCheckbox(){
     let tempArr = [];
 
     inputCheckbox.forEach(el => {
@@ -352,7 +354,7 @@ function carousel() {
 // Hide and show cart
 // hide
 document.querySelector('.cart__close i').addEventListener('click', function() {
-    document.querySelector('.cart').style.transform = 'translateX(50rem)';
+    document.querySelector('.cart').style.transform = 'translateX(100vw)';
 })
 // Show
 document.querySelector('.navigation__cart i').addEventListener('click', function() {
@@ -378,6 +380,8 @@ function addToCart(e) {
     const element = createElementCart(model, price);
     const brandNamesInCartDivs = [...document.querySelectorAll('.cart__controll .cart__model')];
 
+    
+
     // Loop through brandNamesInCartDivs and use only innertext for comparation
     let brandNamesInCart = brandNamesInCartDivs.map(el => {
         return el.innerText;
@@ -385,14 +389,14 @@ function addToCart(e) {
 
     // if don't match class and its not alredy in cart
     if(!(e.target.classList.contains('btn-buy')) || brandNamesInCart.indexOf(model) !== -1){
-        e.preventDefault();
         return;
+        e.preventDefault();
     }
 
-        cartBox.appendChild(element);
+    cartBox.appendChild(element);
+    updateTotalPrice();
 
     e.preventDefault();
-    updateTotalPrice();
 }
 
 // Create element for cart

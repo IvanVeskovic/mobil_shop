@@ -36,6 +36,11 @@
 
     &__list {
         list-style: none;
+
+        @media only screen and (max-width: $phone) {
+            margin-right: 2rem;
+        }
+
     }
 
     &__item {
@@ -55,6 +60,10 @@
             // color: $c-main;
             color: inherit;
             padding: .5rem 1rem;
+
+            @media only screen and (max-width: $phone) {
+                padding: .5rem .8rem;
+            }
         }
 
         &:hover,
@@ -74,6 +83,21 @@
 
         &:hover {
             opacity: 1;
+        }
+
+        @media only screen and (max-width: $phone) {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background-color: $c-dark;
+            font-size: 2.8rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 8rem;
+            height: 8rem;
+            z-index: 9999;
         }
     }
 

@@ -6,10 +6,14 @@
 
     background-color: $c-white;
 
+    @media only screen and (max-width: $tab-port) {
+        grid-row: 3 / 4;
+        grid-column: col-start 1 / col-end 8;
+    }
 }
 
 .filter {
-
+    text-align: center;
     
     &__control{
         display: flex;
@@ -17,6 +21,10 @@
         margin-left: 2rem;
         position: relative;
         color: $c-main;
+
+        @media only screen and (max-width: $tab-port) {
+            display: inline-block;
+        }
 
         * > {
             display: inline-block;

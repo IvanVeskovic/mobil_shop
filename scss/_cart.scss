@@ -9,10 +9,15 @@
     padding: 5rem;
     color: $c-white;
     width: 50rem;
-    transition: all .2s;
+    transition: all .3s ease;
     transform: translateX(50rem);
     // max-height: calc(110vh - 10vh);
     overflow-y: auto;
+
+    @media only screen and (max-width: $phone-sm) {
+        width: calc(100vw);
+        transform: translateX(10vw);
+    }
     
     // & > * {
     //     overflow: auto;

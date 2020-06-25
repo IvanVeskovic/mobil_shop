@@ -4,18 +4,21 @@
 
     background-color: transparent;
     border: 3px solid #fff;
+
+    @media only screen and (max-width: $tab-port) {
+        grid-row: 4 / 5;
+        grid-column: col-start 1 / col-end 8;
+    }
 }
 
 .mobiles {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
     grid-gap: 4rem;
 
     width: 100%;
     padding: 5rem 2.5rem;
     backface-visibility: hidden;
-    transform: perspective(1px);
-
 }
 
 .mobile {
@@ -25,7 +28,7 @@
     background-color: #fff;
     transition: all .4s;
     backface-visibility: hidden;
-
+    
     &__img {
         width: 100%;
         display: inline-block;

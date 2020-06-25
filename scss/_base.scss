@@ -8,6 +8,14 @@ $c-main: #f2994a;
 $c-second: #F2c94c;
 $c-dark: #161a19;
 
+// Screen break points
+$phone-xs: 480px;
+$phone-sm: 660px;
+$phone: 768px; 
+$tab-port: 900px;
+$tab-land: 1200px;
+$laptop: 1800px;
+
 // Basic settings
 *,
 *::before,

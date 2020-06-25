@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
+
+    @media only screen and (max-width: $tab-port) {
+        grid-row: 6 / 7;
+    }
 }
 
 .copyright {

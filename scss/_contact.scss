@@ -9,11 +9,20 @@
     //                             rgba($c-dark, .3) 0%,
     //                             rgba($c-dark, .3) 65%,
     //                             transparent 65%);
+
+    @media only screen and (max-width: $tab-port) {
+        grid-row: 5 / 6;
+        grid-column: col-start 1 / col-end 8;
+    }
 }
 
 .form {
     width: 50%;
     margin: 0 auto;
+
+    @media only screen and (max-width: $tab-port) {
+        width: 70%;
+    }
 
     small { 
         display: inline-block;
