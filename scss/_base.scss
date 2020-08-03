@@ -7,6 +7,7 @@ $c-white: #fff;
 $c-main: #f2994a;
 $c-second: #F2c94c;
 $c-dark: #161a19;
+$c-red: #e74c3c;
 
 // Screen break points
 $phone-xs: 480px;
@@ -30,6 +31,10 @@ html {
     font-size: 62.5%; // 1rem = 10px
     color: $c-dark;
     scroll-behavior: smooth;
+
+    @media only screen and (max-width: $phone) {
+        font-size: 50%;
+    }
 }
 
 body {
@@ -38,15 +43,6 @@ body {
     font-size: 1.6rem;
 
     background: linear-gradient(to right, $c-main, $c-second);
-}
-
-.navigation,
-.header,
-.section-side,
-.section-main,
-.section-contact,
-.footer {
-    // background-color: $c-white;
 }
 
 

@@ -102,4 +102,14 @@
         cursor: pointer;
         z-index: 30;
     }
+
+    &__message {
+        border: 1px solid $c-second;
+        text-align: center;
+        color: $c-second;
+        font-size: 1.8rem;
+        margin-top: 1rem;
+        padding: .5rem 2rem;
+        display: none;
+    }
 }

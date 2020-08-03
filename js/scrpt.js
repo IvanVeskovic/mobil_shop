@@ -2,6 +2,7 @@ const inputCheckbox = document.querySelectorAll('.checkbox');
 const carousels= document.querySelectorAll('.carousel__img');
 const carouselBtns = document.querySelectorAll('.carousel__box');
 const carouselTracker = document.querySelector('.carousel__tracker');
+const navMob = document.querySelector('.navigation__menu');
 
 const mobilesContainer = document.querySelector('.mobiles');
 
@@ -232,6 +233,17 @@ const mobileDB = [
     },
 ]
 
+// Mobile Navigation
+navMob.addEventListener('click', function() {
+    let navList = document.querySelector('.navigation__list');
+
+    navList.classList.toggle('navigation__list--active');
+})
+
+function menuToggle(){
+    navHamb.style.animation = 'animateExit';
+}
+
 // Create mobile item
 function addMobile(brand, model, price, cpu, ram, space, screen, camera, imgUrl) {
     let mobileContainer = document.querySelector('.mobiles');
@@ -323,7 +335,15 @@ document.getElementById('filter').addEventListener('click', function(e) {
     e.preventDefault();
 });
 
-
+// function filterByPrice(obj) {
+//     if(filterMax !== 0) {
+//         if(filterMax >= filterMin 
+//             && obj.price <= filterMax
+//             && obj.price >= filterMin)
+//     } else {
+//         continue;
+//     }
+// }
 
 // Filter database with checkboxes
 function filterByCheckbox(){
@@ -347,7 +367,7 @@ function carousel() {
     slideIndex++;
     if (slideIndex === carousels.length) {slideIndex = 0}
     carousels[slideIndex].style.opacity = "1";
-    setTimeout(carousel, 8000); // Change image every 2 seconds
+    setTimeout(carousel, 8000); // Change image every 8 seconds
 }
 
 
@@ -363,10 +383,7 @@ document.querySelector('.navigation__cart i').addEventListener('click', function
 
 // remove all items from main-section
 function clearAllPhones(){
-    const mobiles = document.querySelector('.mobiles');
-    while (mobiles.hasChildNodes()) {  
-        mobiles.removeChild(mobiles.firstChild);
-      }
+    clearChilds(document.querySelector('.mobiles'));
 }
 
 // Add item to cart
@@ -395,6 +412,7 @@ function addToCart(e) {
 
     cartBox.appendChild(element);
     updateTotalPrice();
+    updateCartNumberItems();
 
     e.preventDefault();
 }
@@ -427,15 +445,23 @@ function removeItem(e){
     }
 
     updateTotalPrice();
+    updateCartNumberItems();
 }
 
 // Remove all items from cart 
 document.querySelector('.btn-discard').addEventListener('click', function() {
-    while (cartBox.hasChildNodes()) {  
-        cartBox.removeChild(cartBox.firstChild);
-      }
-      updateTotalPrice();
+    clearChilds(cartBox);
+    
+    updateTotalPrice();
+    updateCartNumberItems();
 });
+
+// Clear child elemetns
+function clearChilds(parent){
+    while (parent.hasChildNodes()) {  
+        parent.removeChild(parent.firstChild);
+    }
+}
 
 // Update of total price
 function updateTotalPrice() {
@@ -457,6 +483,13 @@ function updateTotalPrice() {
 quantityCartElements.forEach(el => {
     el.addEventListener('change', updateTotalPrice);
 })
+
+function updateCartNumberItems() {
+    let cartNumItems = document.querySelector('.navigation__cart__elem-num');
+    let numOfItemsInCart = document.querySelector('.cart__box').childElementCount;
+    cartNumItems.innerText = numOfItemsInCart;
+}
+
 
 
 
