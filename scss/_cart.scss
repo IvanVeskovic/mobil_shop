@@ -16,7 +16,7 @@
 
     @media only screen and (max-width: $phone-sm) {
         width: calc(100vw);
-        transform: translateX(10vw);
+        transform: translateX(100vw);
     }
     
     // & > * {

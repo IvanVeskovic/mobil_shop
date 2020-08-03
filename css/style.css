@@ -28,6 +28,9 @@ body {
   display: grid;
   grid-template-columns: repeat(8, [col-start] minmax(min-content, 15rem) [col-end]);
   grid-gap: 1rem; }
+  @media only screen and (max-width: 768px) {
+    .container {
+      padding: 1rem; } }
 
 .navigation {
   grid-row: 1 / 2;
@@ -531,7 +534,7 @@ body {
   @media only screen and (max-width: 660px) {
     .cart {
       width: calc(100vw);
-      transform: translateX(10vw); } }
+      transform: translateX(100vw); } }
   .cart__box {
     padding: 1rem 1rem;
     margin: .5rem 0;
