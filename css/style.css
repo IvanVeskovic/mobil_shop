@@ -28,7 +28,7 @@ body {
   display: grid;
   grid-template-columns: repeat(8, [col-start] minmax(min-content, 15rem) [col-end]);
   grid-gap: 1rem; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 900px) {
     .container {
       padding: 1rem; } }
 
@@ -73,9 +73,6 @@ body {
         max-height: 0rem;
         overflow: hidden;
         transition: all .5s; } }
-    @media only screen and (max-width: 768px) {
-      .navigation__list--active {
-        max-height: 17rem; } }
   .navigation__item {
     display: inline-block;
     margin-left: 1rem;
@@ -201,7 +198,8 @@ body {
   grid-row: 3 / 4;
   grid-column: col-start 1 / col-end 1;
   padding: 1rem;
-  background-color: #fff; }
+  background-color: #fff;
+  position: relative; }
   @media only screen and (max-width: 900px) {
     .section-side {
       grid-row: 3 / 4;
@@ -209,6 +207,11 @@ body {
 
 .filter {
   text-align: center; }
+  @media only screen and (max-width: 900px) {
+    .filter {
+      max-height: 0;
+      transition: all .2s ease-in-out;
+      overflow: hidden; } }
   .filter__control {
     display: flex;
     align-items: center;
@@ -248,8 +251,23 @@ body {
   .filter__descrtiption {
     font-size: 1.6rem;
     margin-left: 1rem; }
+    @media only screen and (max-width: 768px) {
+      .filter__descrtiption {
+        margin-left: .3rem; } }
   .filter__price {
     margin: 2rem 0; }
+
+.mobi-filter-show {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: none; }
+  @media only screen and (max-width: 900px) {
+    .mobi-filter-show {
+      display: block; } }
+  .mobi-filter-show i {
+    font-size: 2.5rem;
+    color: #f2994a; }
 
 .section-main {
   grid-row: 3 / 4;
@@ -268,13 +286,21 @@ body {
   width: 100%;
   padding: 5rem 2.5rem;
   backface-visibility: hidden; }
+  @media only screen and (max-width: 900px) {
+    .mobiles {
+      grid-gap: 2rem;
+      padding: 2rem; } }
 
 .mobile {
   box-shadow: 0 1rem 1.5rem rgba(22, 26, 25, 0.3);
   padding: 1rem;
   background-color: #fff;
   transition: all .4s;
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column; }
+  .mobile .buttons {
+    align-items: flex-end; }
   .mobile__img {
     width: 100%;
     display: inline-block; }
@@ -314,6 +340,11 @@ body {
     transform: scale(1.05);
     box-shadow: 0 1.5rem 2rem rgba(22, 26, 25, 0.3);
     backface-visibility: hidden; }
+    @media only screen and (max-width: 900px) {
+      .mobile:hover {
+        transform: scale(1);
+        box-shadow: 0;
+        backface-visibility: hidden; } }
   .mobile .btn {
     font-size: 1.6rem; }
 
@@ -396,6 +427,9 @@ body {
 .copyright {
   font-size: 1.6rem;
   padding: 1rem; }
+  @media only screen and (max-width: 768px) {
+    .copyright {
+      display: none; } }
 
 .socials__box {
   display: inline-block;
@@ -503,7 +537,8 @@ body {
   margin: 0;
   display: flex;
   flex-grow: 1;
-  flex-flow: row wrap; }
+  flex-flow: row wrap;
+  margin-top: auto; }
 
 @keyframes animateExit {
   from {
@@ -532,7 +567,7 @@ body {
   color: #fff;
   width: 50rem;
   transition: all .3s ease;
-  transform: translateX(50rem);
+  transform: translateX(60rem);
   overflow-y: auto; }
   @media only screen and (max-width: 660px) {
     .cart {
@@ -614,3 +649,6 @@ body {
     outline: none; }
   .number-input*::placeholder {
     color: #fff; }
+
+.active {
+  max-height: 20rem; }

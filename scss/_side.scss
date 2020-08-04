@@ -5,6 +5,7 @@
     padding: 1rem;
 
     background-color: $c-white;
+    position: relative;
 
     @media only screen and (max-width: $tab-port) {
         grid-row: 3 / 4;
@@ -14,6 +15,12 @@
 
 .filter {
     text-align: center;
+
+    @media only screen and (max-width: $tab-port) {
+        max-height: 0;
+        transition: all .2s ease-in-out;
+        overflow: hidden;
+    }
     
     &__control{
         display: flex;
@@ -71,9 +78,29 @@
     &__descrtiption {
         font-size: 1.6rem;
         margin-left: 1rem;
+
+        @media only screen and (max-width: $phone) {
+            margin-left: .3rem;
+        }
     }
 
     &__price {
         margin: 2rem 0;
+    }
+}
+
+.mobi-filter-show {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: none;
+
+    @media only screen and (max-width: $tab-port) {
+        display: block;
+    }
+
+    i {
+        font-size: 2.5rem;
+        color: $c-main;
     }
 }

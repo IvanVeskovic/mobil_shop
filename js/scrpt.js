@@ -237,7 +237,7 @@ const mobileDB = [
 navMob.addEventListener('click', function() {
     let navList = document.querySelector('.navigation__list');
 
-    navList.classList.toggle('navigation__list--active');
+    navList.classList.toggle('active');
 })
 
 function menuToggle(){
@@ -277,7 +277,7 @@ function addMobile(brand, model, price, cpu, ram, space, screen, camera, imgUrl)
     <div class="buttons">
         <a href="#" class="btn btn--main btn-more">More</a>
         <a href="#" class="btn btn--second btn-buy">Buy</a>
-    </div>`;
+    </div>`
 
     mobileContainer.appendChild(mobile);
 }
@@ -357,6 +357,21 @@ function filterByCheckbox(){
     return tempArr;
 }
 
+// Show and hide filters on mobile screen 
+let showFilter = document.querySelector('.mobi-filter-show');
+showFilter.addEventListener('click', function() {
+    let filterContainer = document.querySelector('.filter');
+    if(filterContainer.classList.contains('active')) {
+        filterContainer.classList.remove('active');
+        showFilter.innerHTML = `<i class="fas fa-caret-square-down"></i>`
+    } else {
+        filterContainer.classList.add('active');
+        showFilter.innerHTML = `<i class="fas fa-caret-square-up"></i>`
+    }
+
+    console.log(123);
+})
+
 // AUto slide carousel
 let slideIndex = 0;
 
@@ -375,10 +390,12 @@ function carousel() {
 // hide
 document.querySelector('.cart__close i').addEventListener('click', function() {
     document.querySelector('.cart').style.transform = 'translateX(100vw)';
+    // document.querySelector('.cart').style.padding = '0';
 })
 // Show
 document.querySelector('.navigation__cart i').addEventListener('click', function() {
     document.querySelector('.cart').style.transform = 'translateX(0)';
+    // document.querySelector('.cart').style.padding = '5rem';
 })
 
 // remove all items from main-section
@@ -397,8 +414,6 @@ function addToCart(e) {
     const element = createElementCart(model, price);
     const brandNamesInCartDivs = [...document.querySelectorAll('.cart__controll .cart__model')];
 
-    
-
     // Loop through brandNamesInCartDivs and use only innertext for comparation
     let brandNamesInCart = brandNamesInCartDivs.map(el => {
         return el.innerText;
@@ -407,7 +422,6 @@ function addToCart(e) {
     // if don't match class and its not alredy in cart
     if(!(e.target.classList.contains('btn-buy')) || brandNamesInCart.indexOf(model) !== -1){
         return;
-        e.preventDefault();
     }
 
     cartBox.appendChild(element);

@@ -57,7 +57,7 @@ body {
     grid-template-columns: repeat(8, [col-start] minmax(min-content, 15rem) [col-end]);
     grid-gap: 1rem;
 
-    @media only screen and (max-width: $phone) {
+    @media only screen and (max-width: $tab-port) {
         padding: 1rem;
     }
 }

@@ -17,6 +17,10 @@
 .copyright {
     font-size: 1.6rem;
     padding: 1rem;
+
+    @media only screen and (max-width: $phone) {
+        display: none;
+    }
 }
 
 .socials {

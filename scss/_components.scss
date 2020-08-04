@@ -15,4 +15,9 @@
     &*::placeholder {
         color: $c-white;
     }
-}   
+}
+
+
+.active {
+    max-height: 20rem;
+}
