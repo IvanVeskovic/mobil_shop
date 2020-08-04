@@ -389,12 +389,12 @@ function carousel() {
 // Hide and show cart
 // hide
 document.querySelector('.cart__close i').addEventListener('click', function() {
-    document.querySelector('.cart').style.transform = 'translateX(100vw)';
+    document.querySelector('.cart').style.transform = 'translateX(200vw)';
     // document.querySelector('.cart').style.padding = '0';
 })
 // Show
 document.querySelector('.navigation__cart i').addEventListener('click', function() {
-    document.querySelector('.cart').style.transform = 'translateX(0)';
+    document.querySelector('.cart').style.transform = 'translateX(-100vw)';
     // document.querySelector('.cart').style.padding = '5rem';
 })
 

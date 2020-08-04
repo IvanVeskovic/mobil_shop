@@ -558,7 +558,7 @@ body {
 
 .cart {
   position: fixed;
-  right: 0;
+  right: -100vw;
   top: 0;
   z-index: 1000;
   height: 100%;
@@ -571,8 +571,7 @@ body {
   overflow-y: auto; }
   @media only screen and (max-width: 660px) {
     .cart {
-      width: calc(100vw);
-      transform: translateX(100vw); } }
+      width: calc(100vw); } }
   .cart__box {
     padding: 1rem 1rem;
     margin: .5rem 0;
