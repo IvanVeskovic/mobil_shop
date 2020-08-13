@@ -1,9 +1,10 @@
 const inputCheckbox = document.querySelectorAll('.checkbox');
+
 const carousels= document.querySelectorAll('.carousel__img');
 const carouselBtns = document.querySelectorAll('.carousel__box');
 const carouselTracker = document.querySelector('.carousel__tracker');
-const navMob = document.querySelector('.navigation__menu');
 
+const navMob = document.querySelector('.navigation__menu');
 const mobilesContainer = document.querySelector('.mobiles');
 
 const filterMin = document.getElementById('price-min').value;
@@ -233,19 +234,15 @@ const mobileDB = [
     },
 ]
 
-// Mobile Navigation
-navMob.addEventListener('click', function() {
-    let navList = document.querySelector('.navigation__list');
 
-    navList.classList.toggle('active');
-})
+// ############# FUNCTIONS ############### 
 
-function menuToggle(){
+menuToggle = () => {
     navHamb.style.animation = 'animateExit';
 }
 
 // Create mobile item
-function addMobile(brand, model, price, cpu, ram, space, screen, camera, imgUrl) {
+addMobile = (brand, model, price, cpu, ram, space, screen, camera, imgUrl) => {
     let mobileContainer = document.querySelector('.mobiles');
 
     let mobile = document.createElement('div');
@@ -283,7 +280,7 @@ function addMobile(brand, model, price, cpu, ram, space, screen, camera, imgUrl)
 }
 
 // Add mobiles from database to UI.
-function importDbMobToUI(){
+importDbMobToUI = () => {
     mobileDB.forEach(el => {
         [brand, model, price, cpu, ram, space, screen, camera, imgUrl] = Object.values(el);
 
@@ -293,60 +290,14 @@ function importDbMobToUI(){
 
 
 //Remove opacity from carousel img
-function removeOpacity () {
+removeOpacity = () => {
     carousels.forEach(el => {
         el.style.opacity = '0';
     })
 } 
 
-// LIsteners
-// Change carousel on click
-carouselTracker.addEventListener('click', function(e) {
-    if(e.target.classList.contains('carousel__box')){
-        removeOpacity();
-        
-        let element = +(e.target.classList[1].slice(-1)) - 1;
-        carousels[element].style.opacity = "1";
-    }
-    e.preventDefault();
-})
-
-// Add All mobile from database to UI
-document.getElementById('show-all').addEventListener('click', importDbMobToUI);
-
-// Filter mobile and display to UI
-document.getElementById('filter').addEventListener('click', function(e) {
-    clearAllPhones();
-    const checkedNames = filterByCheckbox();
-    const filterMax = +document.getElementById('price-max').value;
-
-    console.log(filterMax);
-    // Loop through checked filter
-    checkedNames.forEach(elNames => {
-        // Loop through database array
-        mobileDB.forEach(elDb => {
-            if(elNames.toLowerCase() === elDb.brand.toLowerCase()) {
-                [brand, model, price, cpu, ram, space, screen, camera, imgUrl] = Object.values(elDb);
-                addMobile(brand, model, price, cpu, ram, space, screen, camera, imgUrl);
-            } 
-        })
-    })
-
-    e.preventDefault();
-});
-
-// function filterByPrice(obj) {
-//     if(filterMax !== 0) {
-//         if(filterMax >= filterMin 
-//             && obj.price <= filterMax
-//             && obj.price >= filterMin)
-//     } else {
-//         continue;
-//     }
-// }
-
 // Filter database with checkboxes
-function filterByCheckbox(){
+filterByCheckbox = () => {
     let tempArr = [];
 
     inputCheckbox.forEach(el => {
@@ -357,25 +308,10 @@ function filterByCheckbox(){
     return tempArr;
 }
 
-// Show and hide filters on mobile screen 
-let showFilter = document.querySelector('.mobi-filter-show');
-showFilter.addEventListener('click', function() {
-    let filterContainer = document.querySelector('.filter');
-    if(filterContainer.classList.contains('active')) {
-        filterContainer.classList.remove('active');
-        showFilter.innerHTML = `<i class="fas fa-caret-square-down"></i>`
-    } else {
-        filterContainer.classList.add('active');
-        showFilter.innerHTML = `<i class="fas fa-caret-square-up"></i>`
-    }
-
-    console.log(123);
-})
-
 // AUto slide carousel
 let slideIndex = 0;
 
-function carousel() {
+carousel = () => {
     for (let i = 0; i < carousels.length; i++) {
         carousels[i].style.opacity = "0";
     }
@@ -385,29 +321,13 @@ function carousel() {
     setTimeout(carousel, 8000); // Change image every 8 seconds
 }
 
-
-// Hide and show cart
-// hide
-document.querySelector('.cart__close i').addEventListener('click', function() {
-    document.querySelector('.cart').style.transform = 'translateX(200vw)';
-    // document.querySelector('.cart').style.padding = '0';
-})
-// Show
-document.querySelector('.navigation__cart i').addEventListener('click', function() {
-    document.querySelector('.cart').style.transform = 'translateX(-100vw)';
-    // document.querySelector('.cart').style.padding = '5rem';
-})
-
 // remove all items from main-section
-function clearAllPhones(){
+clearAllPhones = () => { 
     clearChilds(document.querySelector('.mobiles'));
 }
 
-// Add item to cart
-mobilesContainer.addEventListener('click', addToCart);
-
 // add createrd element to cart on EL
-function addToCart(e) {
+addToCart = (e) => {
     const parent = e.target.parentElement.parentElement;
     const model = parent.querySelector('.mobile__model').innerText;
     const price = parent.querySelector('.mobile__price').innerText;
@@ -432,7 +352,7 @@ function addToCart(e) {
 }
 
 // Create element for cart
-function createElementCart(model, price) {
+createElementCart = (model, price) => {
     let cartControll = document.createElement('div');
     cartControll.classList.add('cart__controll');
     cartControll.innerHTML = `
@@ -450,10 +370,8 @@ function createElementCart(model, price) {
     return cartControll;
 }
 
-// Remove Item from cart
-document.querySelector('.cart__box').addEventListener('click', removeItem);
-
-function removeItem(e){
+// Remove item from cart
+removeItem = (e) =>{
     if(e.target.parentElement.classList.contains('cart__delete')){
         e.target.parentElement.parentElement.remove();
     }
@@ -462,23 +380,15 @@ function removeItem(e){
     updateCartNumberItems();
 }
 
-// Remove all items from cart 
-document.querySelector('.btn-discard').addEventListener('click', function() {
-    clearChilds(cartBox);
-    
-    updateTotalPrice();
-    updateCartNumberItems();
-});
-
 // Clear child elemetns
-function clearChilds(parent){
+clearChilds = (parent) => {
     while (parent.hasChildNodes()) {  
         parent.removeChild(parent.firstChild);
     }
 }
 
 // Update of total price
-function updateTotalPrice() {
+updateTotalPrice = () => {
     const cartTotal = document.querySelector('.cart__total__price');
     let total = 0;
     const cartControll = document.querySelectorAll('.cart__box .cart__controll');
@@ -493,37 +403,104 @@ function updateTotalPrice() {
     cartTotal.innerHTML = `${total}&euro;`;
 }
 
-// Update cart total on changing quantity
-quantityCartElements.forEach(el => {
-    el.addEventListener('change', updateTotalPrice);
-})
-
-function updateCartNumberItems() {
+// Update numbers on cart nav
+updateCartNumberItems = () => {
     let cartNumItems = document.querySelector('.navigation__cart__elem-num');
     let numOfItemsInCart = document.querySelector('.cart__box').childElementCount;
     cartNumItems.innerText = numOfItemsInCart;
 }
 
-
-
-
-
-carousel();
-importDbMobToUI();
-
-
 // Year current
 document.getElementById('year').innerText = new Date().getFullYear();
 
 
-// ******************************************************
-function isTrue(){
-    inputs.forEach(el => {
-        if(el.checked === true) {
-            // console.log(el.name);
-        }
-    });
-}
+// ################### LISTENERS ##############
 
-// document.querySelector('.btn__filter').addEventListener('click', isTrue);
+// Mobile Navigation
+navMob.addEventListener('click', function() {
+    let navList = document.querySelector('.navigation__list');
 
+    navList.classList.toggle('active');
+})
+
+// Change carousel on click
+carouselTracker.addEventListener('click', function(e) {
+    if(e.target.classList.contains('carousel__box')){
+        removeOpacity();
+        
+        let element = +(e.target.classList[1].slice(-1)) - 1;
+        carousels[element].style.opacity = "1";
+    }
+    e.preventDefault();
+})
+
+// Add All mobile from database to UI
+document.getElementById('show-all').addEventListener('click', importDbMobToUI);
+
+// Filter mobile and display to UI
+document.getElementById('filter').addEventListener('click', function(e) {
+    clearAllPhones();
+    const checkedNames = filterByCheckbox();
+    const filterMax = +document.getElementById('price-max').value;
+    
+    // Loop through checked filter
+    checkedNames.forEach(elNames => {
+        // Loop through database array
+        mobileDB.forEach(elDb => {
+            if(elNames.toLowerCase() === elDb.brand.toLowerCase()) {
+                [brand, model, price, cpu, ram, space, screen, camera, imgUrl] = Object.values(elDb);
+                addMobile(brand, model, price, cpu, ram, space, screen, camera, imgUrl);
+            } 
+        })
+    })
+
+    e.preventDefault();
+});
+
+// Show and hide filters on mobile screen 
+let showFilter = document.querySelector('.mobi-filter-show');
+showFilter.addEventListener('click', function() {
+    let filterContainer = document.querySelector('.filter');
+    if(filterContainer.classList.contains('active')) {
+        filterContainer.classList.remove('active');
+        showFilter.innerHTML = `<i class="fas fa-caret-square-down"></i>`
+    } else {
+        filterContainer.classList.add('active');
+        showFilter.innerHTML = `<i class="fas fa-caret-square-up"></i>`
+    }
+})
+
+// Hide and show cart
+// hide
+document.querySelector('.cart__close i').addEventListener('click', function() {
+    document.querySelector('.cart').style.transform = 'translateX(200vw)';
+    // document.querySelector('.cart').style.padding = '0';
+})
+// Show
+document.querySelector('.navigation__cart i').addEventListener('click', function() {
+    document.querySelector('.cart').style.transform = 'translateX(-100vw)';
+    // document.querySelector('.cart').style.padding = '5rem';
+})
+
+// Add item to cart
+mobilesContainer.addEventListener('click', addToCart);
+
+// Remove Item from cart
+document.querySelector('.cart__box').addEventListener('click', removeItem);
+
+// Remove all items from cart 
+document.querySelector('.btn-discard').addEventListener('click', function() {
+    clearChilds(cartBox);
+    
+    updateTotalPrice();
+    updateCartNumberItems();
+});
+
+// Update cart total on changing quantity
+quantityCartElements.forEach(el => {
+    el.addEventListener('change', updateTotalPrice);
+});
+
+// ################### INIT ##############
+carousel();
+importDbMobToUI();
