@@ -54,6 +54,7 @@ body {
     max-width: 120rem;
 
     display: grid;
+    grid-template-columns: repeat(8, [col-start] minmax(-webkit-min-content, 15rem) [col-end]);
     grid-template-columns: repeat(8, [col-start] minmax(min-content, 15rem) [col-end]);
     grid-gap: 1rem;
 
